@@ -8,7 +8,7 @@ AWS lightsail로 웹 플랫폼을 배포하면서 터미널로 git명령어를 �
 - git clone <https:.. URL>: 저장소 복제/다운로드(clone)
 - git clone /로컬/저장소/경로
 - git clone 사용자명@호스트:/원격/저장소/경로
-- git add <파일명>: <추가 및 확정(commit)>
+- git add <파일명>: <추가 및 확정(commit)>aaa
 - git add *
 - git commit -m "커밋 메시지"	커밋 생성
 (실제 변경사항 확정)
