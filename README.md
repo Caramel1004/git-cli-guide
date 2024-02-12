@@ -1,7 +1,6 @@
 ## 효율적인 코드 관리 == git 관리
 로컬 서버로 개발 할때는 vscode에서 github에 commit push pull등 GUI로 처리하는 경우가 많았는데<br>
-AWS lightsail로 웹 플랫폼을 배포하면서 터미널로 git명령어를 사용할 일이 생겨<br>
-계속 기억 하기 위해 git의 명령어를 정리 하기로 했습니다.<br>
+AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.<br>
 
 # GIT 명령어
 - git init: 새로운 저장소 생성
