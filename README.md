@@ -1,6 +1,6 @@
 ## 효율적인 코드 관리 == git 관리
 로컬 서버로 개발 할때는 vscode에서 github에 commit push pull등 GUI로 처리하는 경우가 많았는데<br>
-AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.<br>
+AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.<br><br><br>
 
 # GIT 초기 설정 및 확인
 
@@ -33,8 +33,36 @@ AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어�
 >```
 >git config --list
 >```
+---
 
-- git init: 새로운 저장소 생성
+# git 로컬 서버에 저장소 생성
+
+>- 새로운 저장소 생성
+>```
+>git init
+>```
+
+>- 로컬 서버에서 변경된 모든 파일을 스테이징에 추가
+>```
+>git add
+>```
+
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Caramel1004/test.git
+git push -u origin main
+
+# git 서버에 올려진 repository 가져오기
+> - repository 복제
+>```java
+>  git clone <https:.. URL>
+>```
+> - 예시
+> ```
+>  git clone https://github.com/Caramel1004/git-cli
+> ```
+
+
 - git clone <https:.. URL>: 저장소 복제/다운로드(clone)
 - git clone /로컬/저장소/경로
 - git clone 사용자명@호스트:/원격/저장소/경로
