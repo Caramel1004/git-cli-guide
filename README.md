@@ -2,7 +2,38 @@
 로컬 서버로 개발 할때는 vscode에서 github에 commit push pull등 GUI로 처리하는 경우가 많았는데<br>
 AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.<br>
 
-# GIT 명령어
+# GIT 초기 설정 및 확인
+
+> - git 닉네임 설정
+>```
+>git config --global user.name "(본인이 설정 할 닉네임)"
+>```
+
+> - git 이메일 설정
+>```
+>git config --global user.email "(본인 이메일)"
+>```
+
+>- git 설정된 닉네임 확인
+>```
+>git config --global user.name
+>```
+
+>- git 설정된 이메일 확인
+>```
+>git config --global user.email
+>```
+
+>- git 브랜치 명 설정
+>```
+>git config --global init.defaultBranch main
+>```
+
+>- git에 설정된 목록 보기
+>```
+>git config --list
+>```
+
 - git init: 새로운 저장소 생성
 - git clone <https:.. URL>: 저장소 복제/다운로드(clone)
 - git clone /로컬/저장소/경로
