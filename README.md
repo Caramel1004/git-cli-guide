@@ -35,59 +35,116 @@ AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어�
 >```
 ---
 
-# git 로컬 서버에 저장소 생성
+# git 원격 저장소를 로컬 브랜치에 병합하여 연결
 
->- 새로운 저장소 생성
+### - git 서버에 원격 저장소 생성
+1. 내 github에 접속 후 맨 상단에 repositories 클릭
+2. 상단 맨 오른쪽에 초록색 New 버튼 클릭
+3. (선택 사항)README.md를 생성
+
+### - 로컬 서버에서 git에 업로드 할 소스 코드 폴더에 로컬 저장소 생성
+
+> #### 1. 터미널에서 업로드 할 소스코드 폴더로 이동
+>    - vscode or intellij로 해당 소스코드 폴더를 열었다면 <br>
+>    터미널에 이미 해당 폴더에 위치해 있습니다.
+>    - iTerm2 OR Terminal OR gitbash를 이용한다면 해당 폴더로 이동 해야 합니다.<br>
+>    아래 명령로 해당 폴더로 이동 합니다.
+>    
+>```
+>cd ~/desktop/...
+>```
+
+> #### 2. 새로운 저장소 생성
 >```
 >git init
 >```
-
->- 로컬 서버에서 변경된 모든 파일을 스테이징에 추가
+#### 3 . 로컬 서버에서 변경되거나 추가된 파일 스테이징에 추가
+> -  로컬 서버에서 변경되거나 추가된 모든 파일을 스테이징에 추가
 >```
->git add
+>git add .
+>```
+>```
+>git add *
+>```
+> - 로컬 서버에서 변경되거나 추가된 일부 파일 선택해서 스테이징에 추가
+>```
+>git add <파일 이름 or 폴더 이름>
 >```
 
-# git 로컬 서버 저장소에 변경 사항 커밋
->- 커밋
+> #### 4. 로컬 서버에서 스테이징된 변경 사항들을 원격 저장소에 커밋
+>   - 간결한 메세지를 입력하는 경우
 >```
 >git commit -m "메세지 입력"
 >```
+>   - 디테일한 메세지를 입력하는 경우
+>     - commit 후 작성 창에서 자세히 입력
+>```
+>git commit
+>```
+>   - 스테이징 추가 과정과 커밋을 동시에 하는 경우
+>```
+>git commit -am "메세지 입력"
+>```
 
-# git 원격 저장소 연결
+> #### 5. 최초 브랜치 생성
+> - 보통 기본 브랜치명은 main 권장
+>   - tmi로 원래는 기본 브랜치명으로 master라는 용어를 많이 사용 되어 왔고 <br>
+>   브랜치를 추가할때 slave라는 용어가 보편적으로 많이 사용되어 왔지만 <br> 이는 인종차별적 의미가 있어
+>   사용을 지양하고 있습니다.
+>```
+>git branch -M main
+>```
+### - 원격 저장소를 로컬 브랜치에 병합
+> #### 6. git 원격 저장소 연결
 > - 원격 저장소 조회
+>   - 추가된 원격 저장소가 없으면 아무것도 없음
+>   - 추가된 원격 저장소가 있으면 추가된 원격 저장소 URL 있음
 >```
 > git remote -v
 >```
-
 > - 원격 저장소 추가
+>   - 원격 저장소에 로컬 브랜치 병합
 > ```
 > git remote add origin https://github.com/....
 >```
-
 > - 원격 저장소 수정
 > ```
 > git remote set-url origin https://github.com/....
 >```
-
 >- 원격 저장소 삭제
 > ```
 > git remote remove origin
 >```
 
-
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Caramel1004/test.git
-git push -u origin main
-
-# git 서버에 올려진 repository 가져오기
-> - repository 복제
+> #### 7. git 원격 저장소에 초기 소스코드 업로드
+> - 원격 저장소에 이미 파일이 있는 경우 == 처음 repository생성 할 때 리드미파일을 추가한 경우
+>   - 이 경우는 반드시 pull하고 push진행
 >```
->  git clone <https:.. URL>
+>git pull <리모트 명> <브랜치 명>
+>```
+> - 예시
+>```
+>git pull origin main
+>```
+> - 원격 저장소에 파일이 아예 없는 경우 == 처음 repository생성 할 때 리드미파일 추가 안한 경우
+>```
+>git push -u origin main
+>```
+> OR
+>```
+>git push --set-upstream origin main
+>```
+
+
+# git 서버에 올려진 원격 저장소 가져오기
+> #### 1. 원격 저장소 복제
+>   - 원하는 폴더로 이동 후 그 폴더에 클론 하면 됩니다.
+>```
+>  git clone <원격 저장소 URL>
 >```
 > - 예시
 > ```
->  git clone https://github.com/Caramel1004/git-cli
+>  git clone https://github.com/Caramel1004/git-cli.git
 > ```
 
 
