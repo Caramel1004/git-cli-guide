@@ -1,8 +1,16 @@
 ## 📚효율적인 App 버전 관리 == ⚙ git 관리
-로컬 서버로 개발 할때는 vscode에서 github에 commit push pull등 GUI로 처리하는 경우가 많았는데<br>
-AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.<br><br><br>
+>로컬 서버로 개발 할때는 vscode에서 github에 commit push pull등 GUI로 처리하는 경우가 많았는데<br>
+>AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어를 수월하게 사용하기 위해 git의 명령어를 정리 했습니다.
+<br>
 
-# GIT 초기 설정 및 확인
+# 목차
+1. [git 초기 설정 및 확인](#git 초기 설정 및 확인)
+2. [git 원격 저장소를 로컬 브랜치에 병합하여 연결](#git 원격 저장소를 로컬 브랜치에 병합하여 연결)
+3. [git 서버에 올려진 원격 저장소 가져오기](#git 서버에 올려진 원격 저장소 가져오기)
+
+git 명령어 한눈에 보기: [git 초기 설정 및 확인](#git 초기 설정 및 확인)
+
+# git 초기 설정 및 확인
 
 > - git 닉네임 설정
 >```
@@ -147,10 +155,27 @@ AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어�
 >  git clone https://github.com/Caramel1004/git-cli.git
 > ```
 
+# git 명령어 한번에 보기
+>저장소 복제/다운로드(clone)
+>```
+>git clone <https:.. URL>
+>```
+>```
+>git clone /로컬/저장소/경로
+>```
+>```
+>git clone 사용자명@호스트:/원격/저장소/경로
+>```
 
-- git clone <https:.. URL>: 저장소 복제/다운로드(clone)
-- git clone /로컬/저장소/경로
-- git clone 사용자명@호스트:/원격/저장소/경로
+>스테이징에 추가
+> - 모든 파일 or 폴더
+>```
+>git add *
+>```
+> - 선택 파일
+>```
+>git add <파일명> or 폴더
+>```
 - git add <파일명>: <추가 및 확정(commit)>aaa
 - git add *
 - git commit -m "커밋 메시지"	커밋 생성
