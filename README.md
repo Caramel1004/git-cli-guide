@@ -47,6 +47,34 @@ AWS EC2로 웹 플랫폼을 배포하면서 ubuntu OS 환경에서 git명령어�
 >git add
 >```
 
+# git 로컬 서버 저장소에 변경 사항 커밋
+>- 커밋
+>```
+>git commit -m "메세지 입력"
+>```
+
+# git 원격 저장소 연결
+> - 원격 저장소 조회
+>```
+> git remote -v
+>```
+
+> - 원격 저장소 추가
+> ```
+> git remote add origin https://github.com/....
+>```
+
+> - 원격 저장소 수정
+> ```
+> git remote set-url origin https://github.com/....
+>```
+
+>- 원격 저장소 삭제
+> ```
+> git remote remove origin
+>```
+
+
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Caramel1004/test.git
@@ -54,7 +82,7 @@ git push -u origin main
 
 # git 서버에 올려진 repository 가져오기
 > - repository 복제
->```java
+>```
 >  git clone <https:.. URL>
 >```
 > - 예시
